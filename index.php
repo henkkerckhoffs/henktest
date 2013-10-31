@@ -1,5 +1,3 @@
 <?php 
 
-echo 'blaaa';
-
-echo 'nieuwe toevoeging';
+echo 'index';
