@@ -3,3 +3,5 @@ asdfasdfsdaf
 haha
 
 dit is een nieuwe functie aanpassing
+
+dit is functie 1
