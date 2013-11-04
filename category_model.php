@@ -75,7 +75,7 @@ class Category_model extends BF_Model {
       return $idArray;
    }
    
-   protected function get_parent($categoryId, $parentArray)
+   protected function get_parente($categoryId, $parentArray)
    {
       $this->database->select(            'aut_CTG_CategoryId, int_CTG_ParentCategoryId');
       $this->database->where(             'aut_CTG_CategoryId', $categoryId);
