@@ -33,6 +33,17 @@ class Category_model extends BF_Model {
    	}
    }
    
+   public function get_categories_henk_bla()
+   {
+   	$this->database->select('*');
+   	$query = $this->database->get('tbm_CTG_Categories');
+   
+   	if ($query->num_rows() > 0)
+   	{
+   		return $query->result();
+   	}
+   }
+   
    public function get_categories()
    {
       $this->database->select('*');
