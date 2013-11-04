@@ -92,6 +92,20 @@ class Category_model extends BF_Model {
       }
    }
    
+   public function check_product_group_henk($elementId)
+   {
+      $this->database->select(            'int_SEL_ElementId_ELM, int_SEL_ProductGroupId_PRG');
+      $this->database->where(             'int_SEL_ElementId_ELM', $elementId);
+      $this->database->where(             'int_SEL_ProductGroupId_PRG IS NOT NULL');
+      $this->database->where(             'dat_SEL_DeleteDateTime IS NULL');
+      $query = $this->database->get(      'tbt_SEL_SelectedElements');
+       
+      if ($query->num_rows() > 0)
+      {
+         return $query->result_array();
+      }
+   }
+   
    public function element_structure($elementId, $elementStructureArray)
    {
       $this->database->select(            'aut_ELM_ElementId, int_ELM_ParentElementId, str_ELM_Name');
