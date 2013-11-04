@@ -7,3 +7,5 @@ test
 dit is een nieuwe functie aanpassing
 
 dit is functie 1
+
+test functie vanuit git
