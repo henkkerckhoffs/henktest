@@ -22,6 +22,17 @@ class Category_model extends BF_Model {
       $this->database = $this->load->database('db_backoffice', TRUE);
    }
    
+   public function get_categories_henk()
+   {
+      $this->database->select('*');
+      $query = $this->database->get('tbm_CTG_Categories');
+      
+      if ($query->num_rows() > 0)
+      {
+         return $query->result();
+      }
+   }
+   
    public function get_categories()
    {
       $this->database->select('*');
@@ -147,6 +158,13 @@ class Category_model extends BF_Model {
    }
    
    public function create_category_element($insertArray)
+   {
+      $query = $this->database->insert('tbt_CAE_CategoriesElements', $insertArray);
+      
+      return $query;
+   }
+   
+   public function create_category_element_demo($insertArray)
    {
       $query = $this->database->insert('tbt_CAE_CategoriesElements', $insertArray);
       
