@@ -131,7 +131,19 @@ class Category_model extends BF_Model {
          return $elementStructureArray;
       }
    }
-   
+
+   public function category_element_henk($elementId)
+   {
+      $this->database->select(            'aut_ELM_ElementId, int_ELM_ParentElementId, str_ELM_Name');
+      $this->database->where(             'aut_ELM_ElementId', $elementId);
+      $query = $this->database->get(      'tbm_ELM_Elements');
+      
+      if ($query->num_rows() > 0)
+      {
+         return $query->row_array();
+      }
+   }
+
    public function category_element($elementId)
    {
       $this->database->select(            'aut_ELM_ElementId, int_ELM_ParentElementId, str_ELM_Name');
